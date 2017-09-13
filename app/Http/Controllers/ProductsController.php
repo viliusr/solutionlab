@@ -10,7 +10,7 @@ class ProductsController extends Controller
     {
         $products = Product::all();
 
-        return response()->json(['status' => true, 'data' => $products]);
+        return response()->json($products);
     }
 
     public function add()

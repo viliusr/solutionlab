@@ -9,6 +9,7 @@ class Product extends Model {
     protected $table = 'products';
 
     protected $casts = [
-        'id' => 'integer'
+        'id' => 'integer',
+        'price' => 'double'
     ];
 }
