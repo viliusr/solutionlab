@@ -12,5 +12,9 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->version();
+    return 'Back-end is ready: ' . $app->version();
 });
+
+$app->get('/products/get/all',	['uses' => 'ProductsController@getAll']);
+$app->post('/products/add',		['uses' => 'ProductsController@add']);
+$app->post('/products/remove',	['uses' => 'ProductsController@remove']);
