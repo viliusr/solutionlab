@@ -1,0 +1,11 @@
+{
+  "env": {
+    "development": {
+      "plugins": ["transform-react-jsx", "transform-react-jsx-self", "transform-react-jsx-source"]
+    },
+    "production": {
+      "plugins": ["transform-react-jsx"]
+    }
+  },
+  "presets": ["airbnb"]
+}
