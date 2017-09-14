@@ -16,7 +16,7 @@ class Mig2 extends Migration
         Schema::table('products', function(Blueprint $table)
         {
             $table->decimal('price', 5, 2)->default(0);
-            $table->string('description');
+            $table->string('description')->default('');
         });
     }
 
