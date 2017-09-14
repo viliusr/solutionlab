@@ -11,8 +11,8 @@ class ProductRemoveModal extends React.Component {
           Do you really want to remove this product?
         </ModalBody>
         <ModalFooter>
-          <Button color="danger" onClick={() => { this.props.trigger().then(this.props.close) }}>Confirm</Button>
-          <Button color="default" onClick={this.props.close}>Cancel</Button>
+          <Button color="danger" onClick={() => { this.props.trigger().then(this.props.toggle) }}>Confirm</Button>
+          <Button color="default" onClick={this.props.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
     )
