@@ -1,7 +1,7 @@
 # Coffee billboard
 Solutionlab Production task. Coffee billboard application based on Lumen/React
 
-# System requirements
+## System requirements
 
  - npm
  - composer
@@ -22,7 +22,7 @@ Enter project directory
 $ cd solutionlabtask
 ```
 
-### BackEnd setup
+#### BackEnd setup
 
 Install application back-end dependencies:
 ```sh
@@ -55,7 +55,7 @@ You may also would like to have some sample data on the database, so you can see
 $ php artisan db:seed
 ```
 
-# FrontEnd setup
+#### FrontEnd setup
 
 Install application front-end dependencies and build:
 ```sh
@@ -63,7 +63,7 @@ $ npm --prefix ./public install
 $ npm --prefix ./public run-script build
 ```
 
-# Running back-end
+## Running back-end
 
 Most easy way to run application back-end server is using php build-in web server
 ```sh
@@ -73,7 +73,7 @@ php -S 127.0.0.1:8000 -t public
 After you start application back-end server the application is available at:
 [http://127.0.0.1:8000/app](http://127.0.0.1:8000/app)
 
-# Testing:
+## Testing
 
 Running application back-end tests:
 ```sh
