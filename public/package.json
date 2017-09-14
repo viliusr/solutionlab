@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --progress --config webpack.config.js",
     "dev": "webpack-dev-server --progress --config webpack.config.js",
-    "test": "mocha test/.setup.js test/**/*-test.js"
+    "test": "mocha tests/.setup.js tests/**/*-test.js"
   },
   "author": "Vilius Roškus",
   "license": "ISC",

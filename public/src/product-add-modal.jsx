@@ -19,23 +19,23 @@ class ProductAddModal extends React.Component {
         <ModalHeader>Add new product</ModalHeader>
         <ModalBody>
           <div className="form-group">
-            <label for="productTitle">Title</label>
-            <input type="text" name="title" className="form-control" id="productTitle" onChange={this.handleChange} />
+            <label>Title</label>
+            <input type="text" name="title" className="form-control" onChange={this.handleChange} />
           </div>
           <div className="form-group">
-            <label for="productImage">Image url</label>
-            <input type="text" name="image" className="form-control" id="productImage" onChange={this.handleChange} placeholder="http://..." />
+            <label>Image url</label>
+            <input type="text" name="image" className="form-control" onChange={this.handleChange} placeholder="http://..." />
           </div>
           <div className="form-group">
-            <label for="productPrice">Price</label>
+            <label>Price</label>
             <div className="input-group">
-              <input type="text" name="price" className="form-control" id="productPrice" onChange={this.handleChange} placeholder="0.00" />
+              <input type="text" name="price" className="form-control" onChange={this.handleChange} placeholder="0.00" />
               <div className="input-group-addon">EUR</div>
             </div>
           </div>
           <div className="form-group">
-            <label for="productDescription">Short description</label>
-            <input type="text" name="description" className="form-control" onChange={this.handleChange} id="productDescription" />
+            <label>Short description</label>
+            <input type="text" name="description" className="form-control" onChange={this.handleChange} />
           </div>
         </ModalBody>
         <ModalFooter>
