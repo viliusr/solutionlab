@@ -39,7 +39,7 @@ class ProductAddModal extends React.Component {
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button color="success" onClick={this.props.trigger}>Confirm</Button>
+          <Button color="success" onClick={() => this.props.trigger(this.data)}>Confirm</Button>
           <Button color="default" onClick={this.props.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>

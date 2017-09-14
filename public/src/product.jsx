@@ -22,7 +22,7 @@ class Product extends React.Component {
           <CardBlock>
             <CardTitle>{product.title}</CardTitle>
             <CardSubtitle>{product.description}</CardSubtitle>
-            <Button color="danger" style={styles.productRemoveButton} onClick={() => this.props.removeAction({ id: product.id })}>X</Button>
+            <Button color="danger" style={styles.productRemoveButton} onClick={() => this.props.toggle(product.id)}>X</Button>
           </CardBlock>
           <CardFooter className="text-center">{product.price} EUR</CardFooter>
         </Card>
@@ -33,7 +33,8 @@ class Product extends React.Component {
 }
 
 Product.propTypes = {
-  data: React.PropTypes.object
+  data: React.PropTypes.object,
+  toggle: React.PropTypes.function
 };
 
 module.exports = Product

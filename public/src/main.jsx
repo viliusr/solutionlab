@@ -31,7 +31,8 @@ class Main extends React.Component {
     })
   }
 
-  removeProduct(data) {
+  removeProduct() {
+    data = { id: this.state.productIdToRemove }
     return this.props.api.removeProduct(data).then(() => {
       this.toggleRemoveProductModal()
       this.getProducts() 
@@ -42,8 +43,11 @@ class Main extends React.Component {
     this.setState({ showAddProductModal: !this.state.showAddProductModal })
   }
 
-  toggleRemoveProductModal() {
-    this.setState({ showRemoveProductModal: !this.state.showRemoveProductModal })
+  toggleRemoveProductModal(productId) {
+    this.setState({ 
+      showRemoveProductModal: !this.state.showRemoveProductModal,
+      productIdToRemove: productId
+    })
   }
 
   componentWillMount() {
@@ -58,7 +62,7 @@ class Main extends React.Component {
           <NavbarBrand href="/">Coffee billboard</NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Button color="success" onClick={this.addProduct}>Add</Button>
+              <Button color="success" onClick={this.toggleAddProductModal}>Add</Button>
             </NavItem>
           </Nav>
         </Navbar>
@@ -66,7 +70,7 @@ class Main extends React.Component {
         <div className="row">
           {this.state.products ? 
             this.state.products.map(product =>
-              <Product key={product.id} data={product} removeAction={this.removeProduct} />
+              <Product key={product.id} data={product} toggle={this.toggleRemoveProductModal} />
             ) : <div className="col-lg-12 mb-4 text-center"><img width="100%" src="img/loader.gif" /></div>
           }
           {this.state.products && this.state.products.length === 0 ? 
