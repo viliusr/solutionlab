@@ -22,7 +22,7 @@ Enter project directory
 $ cd solutionlabtask
 ```
 
-#### BackEnd setup
+#### Back-end setup
 
 Install application back-end dependencies:
 ```sh
@@ -55,7 +55,7 @@ You may also would like to have some sample data on the database, so you can see
 $ php artisan db:seed
 ```
 
-#### FrontEnd setup
+#### Front-end setup
 
 Install application front-end dependencies and build:
 ```sh
@@ -65,7 +65,7 @@ $ npm --prefix ./public run-script build
 
 ## Running back-end
 
-Most easy way to run application back-end server is using php build-in web server
+Most easy way to run application back-end server is by using php build-in web server
 ```sh
 php -S 127.0.0.1:8000 -t public
 ```
