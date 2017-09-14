@@ -9,10 +9,12 @@ class Main extends React.Component {
 
   constructor() {
     super()
-    this.state = { products: [] }
+    this.state = { products: [], showAddProductModal: false, showRemoveProductModal: false }
     this.getProducts = this.getProducts.bind(this)
     this.addProduct = this.addProduct.bind(this)
     this.removeProduct = this.removeProduct.bind(this)
+    this.closeAddProductModal = this.closeAddProductModal.bind(this)
+    this.closeRemoveProductModal = this.closeRemoveProductModal.bind(this)
   }
 
   getProducts() {
@@ -22,8 +24,8 @@ class Main extends React.Component {
   }
 
   addProduct(data) {
-    this.refs.addProductModal.open()
-    this.setState({ 
+    this.setState({
+      showAddProductModal: true,
       addProductModalTrigger: (data) => {
         return this.props.api.addProduct(data).then(this.getProducts)
       } 
@@ -31,12 +33,20 @@ class Main extends React.Component {
   }
 
   removeProduct(data) {
-    this.refs.removeProductModal.open()
-    this.setState({ 
+    this.setState({
+      showRemoveProductModal: true,
       removeProductModalTrigger: () => {
         return this.props.api.removeProduct(data).then(this.getProducts)
       } 
     })
+  }
+
+  closeAddProductModal() {
+    this.setState({ showAddProductModal: false })
+  }
+
+  closeRemoveProductModal() {
+    this.setState({ showRemoveProductModal: false })
   }
 
   componentWillMount() {
@@ -74,8 +84,8 @@ class Main extends React.Component {
           <p>© Vilius Roškus 2017</p>
         </footer>
 
-        <ProductAddModal ref="addProductModal" trigger={this.state.addProductModalTrigger} />
-        <ProductRemoveModal ref="removeProductModal" trigger={this.state.removeProductModalTrigger} />
+        <ProductAddModal show="this.state.showAddProductModal" close={this.closeAddProductModal} trigger={this.state.addProductModalTrigger} />
+        <ProductRemoveModal show="this.state.showRemoveProductModal" close={this.closeRemoveProductModal} trigger={this.state.removeProductModalTrigger} />
 
       </div>
     )

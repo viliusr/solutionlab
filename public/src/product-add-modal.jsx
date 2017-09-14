@@ -5,19 +5,8 @@ class ProductAddModal extends React.Component {
 
   constructor() {
     super()
-    this.state = { visible: false }
     this.data = {}
-    this.open = this.open.bind(this)
-    this.close = this.close.bind(this)
     this.handleChange = this.handleChange.bind(this)
-  }
-
-  open() {
-    this.setState({ visible: true })
-  }
-
-  close() {
-    this.setState({ visible: false })
   }
 
   handleChange(event) {
@@ -26,7 +15,7 @@ class ProductAddModal extends React.Component {
 
   render() {
     return (
-      <Modal isOpen={this.state.visible} toggle={this.close}>
+      <Modal isOpen={this.props.show}>
         <ModalHeader>Add new product</ModalHeader>
         <ModalBody>
           <div className="form-group">
@@ -50,8 +39,8 @@ class ProductAddModal extends React.Component {
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button color="success" onClick={() => { this.props.trigger(this.data).then(this.close) }}>Confirm</Button>
-          <Button color="default" onClick={this.close}>Cancel</Button>
+          <Button color="success" onClick={() => { this.props.trigger(this.data).then(this.props.close) }}>Confirm</Button>
+          <Button color="default" onClick={this.props.close}>Cancel</Button>
         </ModalFooter>
       </Modal>
     )
