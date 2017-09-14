@@ -60,7 +60,7 @@ $ php artisan db:seed
 Install application front-end dependencies and build:
 ```sh
 $ npm --prefix ./public install
-$ npm --prefix ./public build
+$ npm --prefix ./public run-script build
 ```
 
 # Running back-end
