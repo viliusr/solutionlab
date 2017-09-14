@@ -24,7 +24,9 @@ function post(url, data) {
 }
 
 const api = {
-  getProducts: () => get(config.serverUrl + '/products/get/all')
+  getAllProducts: () => get(config.serverUrl + '/products/get/all'),
+  addProduct: (data) => post(config.serverUrl + '/products/add', data),
+  removeProduct: (data) => post(config.serverUrl + '/products/remove', data)
 }
 
 module.exports = api
