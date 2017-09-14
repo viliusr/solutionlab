@@ -60,7 +60,7 @@ class Main extends React.Component {
           {this.state.products ? 
             this.state.products.map(product =>
               <Product data={product} removeAction={this.removeProduct} />
-            ) : <div>Preloader</div>
+            ) : <div className="col-lg-12 mb-4 text-center"><img width="100%" src="img/loader.gif" /></div>
           }
           {this.state.products.length === 0 ? 
             <div className="col-lg-12 mb-4">
