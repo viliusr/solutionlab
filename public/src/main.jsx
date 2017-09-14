@@ -1,5 +1,5 @@
-import React from 'react';
-import { Alert, Button, Navbar, NavbarBrand, Nav, NavItem } from 'reactstrap';
+import React from 'react'
+import { Alert, Button, Navbar, NavbarBrand, Nav, NavItem } from 'reactstrap'
 
 const Product = require('./product')
 const ProductRemoveModal = require('./product-remove-modal')
