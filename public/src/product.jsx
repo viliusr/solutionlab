@@ -16,7 +16,7 @@ class Product extends React.Component {
     const product = this.props.data;
 
     return (
-      <div className="col-xs-12 col-sm-6 col-md-3 mb-4">
+      <div className="col-xs-12 col-sm-4 col-lg-3 mb-4">
         <Card>
           <CardImg top width="100%" src={product.image} alt="Product image" />
           <CardBlock>
