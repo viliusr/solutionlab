@@ -39,7 +39,7 @@ class ProductAddModal extends React.Component {
           </div>
         </ModalBody>
         <ModalFooter>
-          <Button color="success" onClick={() => { this.props.trigger(this.data).then(this.props.toggle) }}>Confirm</Button>
+          <Button color="success" onClick={this.props.trigger}>Confirm</Button>
           <Button color="default" onClick={this.props.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
@@ -49,6 +49,8 @@ class ProductAddModal extends React.Component {
 }
 
 ProductAddModal.propTypes = {
+  show: React.PropTypes.boolean,
+  toggle: React.PropTypes.function,
   trigger: React.PropTypes.function
 };
 

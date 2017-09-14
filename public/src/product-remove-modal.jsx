@@ -11,7 +11,7 @@ class ProductRemoveModal extends React.Component {
           Do you really want to remove this product?
         </ModalBody>
         <ModalFooter>
-          <Button color="danger" onClick={() => { this.props.trigger().then(this.props.toggle) }}>Confirm</Button>
+          <Button color="danger" onClick={this.props.trigger}>Confirm</Button>
           <Button color="default" onClick={this.props.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
@@ -21,6 +21,8 @@ class ProductRemoveModal extends React.Component {
 }
 
 ProductRemoveModal.propTypes = {
+  show: React.PropTypes.boolean,
+  toggle: React.PropTypes.function,
   trigger: React.PropTypes.function
 };
 

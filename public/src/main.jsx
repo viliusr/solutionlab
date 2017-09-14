@@ -25,11 +25,17 @@ class Main extends React.Component {
   }
 
   addProduct(data) {
-    return this.props.api.addProduct(data).then(this.getProducts)
+    return this.props.api.addProduct(data).then(() => {
+      this.toggleAddProductModal()
+      this.getProducts() 
+    })
   }
 
   removeProduct(data) {
-    return this.props.api.removeProduct(data).then(this.getProducts)
+    return this.props.api.removeProduct(data).then(() => {
+      this.toggleRemoveProductModal()
+      this.getProducts() 
+    })
   }
 
   toggleAddProductModal() {
@@ -75,8 +81,8 @@ class Main extends React.Component {
           <p>© Vilius Roškus 2017</p>
         </footer>
 
-        <ProductAddModal show="this.state.showAddProductModal" toggle={this.toggleAddProductModal} trigger={this.addProduct} />
-        <ProductRemoveModal show="this.state.showRemoveProductModal" toggle={this.toggleRemoveProductModal} trigger={this.removeProduct} />
+        <ProductAddModal show={this.state.showAddProductModal} toggle={this.toggleAddProductModal} trigger={this.addProduct} />
+        <ProductRemoveModal show={this.state.showRemoveProductModal} toggle={this.toggleRemoveProductModal} trigger={this.removeProduct} />
 
       </div>
     )
